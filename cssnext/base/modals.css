@@ -1,0 +1,429 @@
+
+.md-perspective,
+.md-perspective body {
+	height: 100%;
+	overflow: hidden;
+}
+
+.md-perspective body  {
+	background: #222;
+	perspective: 600px;
+}
+
+.md-modal {
+	position: absolute;
+	/*position: fixed;*/
+	top: 2%;
+	/*top: 50%;*/
+	left: 50%;
+	width: 96%;
+	height: auto;
+	z-index: 2000;
+	visibility: hidden;
+	/*transform: translateX(-50%) translateY(-50%);*/
+	transform: translateX(-50%);
+	box-shadow: 0px 5px 28px 0px rgba(0,0,0,.5);
+	overflow: hidden;
+
+	@media screen and (--max-sm){
+		height: 90%;
+
+		&.md-show{
+			height: auto;
+		}
+	}
+
+
+	@media screen and (--sm){
+			top: 50%;
+			width:90%;
+			position: fixed;
+			transform: translateX(-50%) translateY(-50%);
+			overflow: visible;
+		}
+
+
+		&.active-map{
+			.modal-map{
+				transition: .35s ease-in-out;
+				width: 100%;
+			}
+			.modal-info{
+				transition: .35s ease-in-out;
+				width:0;
+				visibility: hidden;
+				opacity: 0;
+				height: 0;
+				padding: 0;
+			}
+			.resize-icon{
+				background: url(../img/icon_close_map.png) 50% 50% no-repeat;
+			}
+		}
+}
+
+.md-show {
+	visibility: visible;
+
+}
+
+.md-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	opacity: 0;
+	background: rgba(0,0,0,0.5);
+	transition: all 0.3s;
+}
+
+.md-show ~ .md-overlay {
+	opacity: 1;
+	visibility: visible;
+}
+
+/* Content styles */
+.md-content {
+	position: relative;
+	margin: 0 auto;
+	background-color: var(--global-color);
+}
+
+.md-content h3 {
+	margin: 0;
+	text-align: center;
+	font-size: var(--font-size-md);
+	color: var(--dark-color);
+	font-weight: bold;
+	text-transform: uppercase;
+
+	@media screen and (--sm){
+		text-align: left;
+	}
+}
+
+.md-header{
+	position: relative;
+	text-align: right;
+	padding: 20px 20px 0 0;
+
+	@media screen and  (--sm){
+		padding: 0;
+	}
+}
+
+.dark-close{
+	.md-close{
+		background: url(../img/close-dark.png) 50% 50% no-repeat;
+	}
+}
+
+.md-close{
+	display: block;
+	padding: 30px;
+	position: absolute;
+	top:0;
+	right:0;
+	background: url(../img/close.png) 50% 50% no-repeat;
+	z-index: 1;
+
+	@media screen and  (--md){
+		padding: 45px 55px;
+		background: url(../img/close-dark.png) 50% 50% no-repeat;
+	}
+
+}
+
+.md-body{
+
+	&.fix{
+		.modal-img-overlay{
+			padding: 30px 30px 0 30px;
+
+			.modal-img{
+				background-size: contain;
+			}
+
+			@media screen and (--sm){
+				padding: 35px;
+				.modal-img{
+					height: 250px;
+				}
+			}
+
+			@media screen and (--md){
+				width:50%;
+				float: left;
+
+				.modal-img{
+					width: 100%;
+					float: none;
+					height: 500px;
+				}
+			}
+		}
+	}
+
+	.btn{
+		@media screen and  (--max-sm){
+			padding: 12px;
+		}
+	}
+
+	.root{
+		padding: 30px 0 20px;
+		font-size: var(--font-size-lg);
+		font-weight: bold;
+		text-transform: uppercase;
+		color: var(--light-color);
+
+		span{
+			display: block;
+			text-align: center;
+
+			@media screen and (--sm){
+				display: inline-block;
+				text-align: left;
+				vertical-align: middle;
+				line-height: var(--font-size-lg);
+			}
+
+		}
+
+		.last-placement{
+			&:before{
+				content:'→';
+				display: block;
+				padding: 0 20px;
+				font-size: 32px;
+				vertical-align: bottom;
+
+				@media screen and (--sm){
+					display: inline-block;
+				}
+			}
+		}
+	}
+
+	.modal-price{
+		font-size: var(--font-size-md);
+		text-align: center;
+
+		@media screen and (--sm){
+			text-align: left;
+		}
+
+		.first-price{
+			font-weight: bold;
+
+			&:after{
+				content:'₴';
+				padding: 0 2px;
+			}
+		}
+
+		.second-price{
+			&:before{
+				content: "/";
+				padding: 5px;
+				font-weight: normal;
+			}
+			i{
+				font-size: 20px;
+				vertical-align: top;
+			}
+		}
+
+	}
+
+	.info{
+		margin-top: 15px;
+		text-align: justify;
+
+		span{
+			margin-top: 10px;
+
+			@media screen and (--md){
+				display: block;
+			}
+		}
+
+		a{
+			&:hover{
+				text-decoration:underline;
+			}
+		}
+
+		@media screen and (--sm){
+			margin-top: 30px;
+			text-align: left;
+		}
+	}
+}
+
+/* Effect 11: Super scaled */
+.md-effect .md-content {
+	transform: scale(2);
+	opacity: 0;
+	transition: all 0.3s;
+}
+
+.md-show.md-effect .md-content {
+	transform: scale(1);
+	opacity: 1;
+}
+
+.md-body{
+	@media screen and (--sm){
+		clear: fix;
+	}
+}
+
+.modal-img,
+.modal-map{
+	width: 100%;
+	height: 200px;
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	@media screen and (--sm){
+		height: 350px;
+	}
+
+	@media screen and (--md){
+		width: 50%;
+		height: 625px;
+		float: left;
+	}
+}
+
+.modal-info{
+	padding: 25px;
+
+	@media screen and (--md){
+		padding: 35px 40px;
+		width: 50%;
+		float: left;
+	}
+}
+
+.form-modal-req{
+	@media screen and (--md){
+		padding-top: 40px;
+	}
+
+	.form-block{
+		@media screen and (--sm-md){
+			&:nth-of-type(3){
+				margin-right: 2.3576516%;
+			}
+			&:nth-of-type(4){
+				margin-right: 0;
+			}
+		}
+
+		@media screen and (--md-lg){
+			@neat-span-columns 6;
+
+			&:nth-of-type(3){
+				margin-right: 0;
+			}
+			&:nth-of-type(4){
+				 margin-right: 0;
+				 clear: both;
+				 float: right;
+			}
+		}
+
+		@media screen and (--lg){
+			&:nth-of-type(3){
+				margin-right: 2.3576516%;
+			}
+			&:nth-of-type(4){
+				 margin-right: 0;
+			}
+		}
+	}
+}
+
+.request-info-lists{
+		margin-top: 40px !important;
+		@media screen and (--sm){
+			clear: fix;
+		}
+
+		.request-info{
+				@media screen and (--sm){
+					@neat-span-columns 6;
+
+					&:nth-of-type(2){
+						margin-right:0;
+					}
+				}
+		}
+}
+
+.request-info{
+		line-height: 2;
+
+		&:nth-of-type(1){
+					&:first-line{
+						font-weight: bold;
+						text-transform: uppercase;
+						font-size: 18px;
+						line-height: 1.75;
+					}
+		}
+}
+.modal-contact{
+	.request-info{
+		@media screen and (--sm){
+				padding-top: 45px;
+			}
+	}
+}
+
+#modal-req{
+	@media screen and (--md-lg) {
+		.modal-img-overlay{
+			width: 40%;
+		}
+
+		.modal-info{
+			width: 60%;
+		}
+	}
+}
+
+.map-link{
+	a{
+		display: block;
+		font-weight: bold;
+
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+
+	@media screen and (--sm){
+		display: none;
+	}
+}
+
+.request-info{
+	&,
+	& + ul{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li{
+			display: block;
+			line-height: 2;
+		}
+	}
+}

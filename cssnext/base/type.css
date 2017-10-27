@@ -1,0 +1,24 @@
+h1,
+h2,
+h3{
+  color: var(--global-color);
+  font-weight: bold;
+  line-height: var(--line-height-base);
+
+  @media screen and (--sm){
+      line-height: var(--line-height-headings);
+  }
+}
+
+h1{
+  font-size: var(--font-size-md);
+
+  @media screen and (--sm){
+    font-size: var(--font-size-lg);
+  }
+
+  span{
+    display: block;
+    font-size: var(--font-size-base);
+  }
+}

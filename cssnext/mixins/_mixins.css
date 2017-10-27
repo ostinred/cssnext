@@ -1,0 +1,55 @@
+@import "media-queries.css";
+
+
+/*
+@define-mixin icon $network, $color: blue {
+    .icon.is-$(network) {
+        color: $color;
+        @mixin-content;
+    }
+    .icon.is-$(network):hover {
+        color: white;
+        background: $color;
+    }
+}
+
+
+*/
+@define-mixin clearfix {
+    &:after{
+        display: table;
+        clear: both;
+    }
+}
+
+@define-mixin size $width, $height{
+  width: $width;
+  height: $height;
+}
+
+@define-mixin square $size{
+  width: $size;
+  height: $size;
+}
+
+@define-mixin center-bg{
+  background-position: 50% 50%;
+  background-size: cover;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+}
+
+@define-mixin overlay $bg-color{
+  &:before{
+    content:'';
+    width:100%;
+    height: 100%;
+    position: absolute 0 0 0 0;
+    background-color: $bg-color;
+  }
+}
+
+@define-mixin size-reset{
+  margin: 0;
+  padding: 0;
+}

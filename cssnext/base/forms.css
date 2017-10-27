@@ -1,0 +1,157 @@
+.form-input {
+    display: block;
+    width: 100%;
+    height: 36px;
+    padding: 6px 20px;
+    font-size: var(--font-size-base);
+    line-height: var(--font-size-md);
+    color: var(--dark-color);
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid var(--dark-color);
+    border-radius: 30px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+
+    &,
+    &:hover,
+    &:active,
+    &:focus{
+      outline:none;
+    }
+}
+
+.form-block{
+  display: block;
+  @neat-outer-container 100%;
+  padding-top: 15px;
+
+
+  @media screen and (--sm){
+    @neat-span-columns 4;
+  }
+
+  .btn{
+    display: block;
+  }
+
+}
+
+.modal-callback{
+    .form-block{
+        &:nth-of-type(4){
+            margin-right: 0;
+        }
+    }
+
+    @media screen and (--md-lg){
+        .form-vertical{
+            .form-block{
+                @neat-span-columns 4;
+
+                &:nth-of-type(3){
+                    margin-right:0;
+                }
+            }
+        }
+    }
+}
+
+#modal-callback,
+#modal-promo{
+    @media screen and (--md-lg){
+        .form-vertical{
+            .form-block{
+                @neat-span-columns 6;
+
+                &:nth-of-type(3){
+                    margin-right:0;
+                }
+                &.last-input{
+                    float : right;
+                }
+            }
+        }
+        .info{
+            span{
+                line-height: 1.5;
+            }
+        }
+    }
+}
+
+
+.last-input{
+    margin-right: 0 !important;
+}
+
+.form-vertical{
+  padding-top: 15px;
+
+  @media screen and (--sm){
+    clear: fix;
+  }
+}
+
+
+
+
+.form-contacts{
+  .form-block{
+
+
+    @media screen and (--sm){
+      @neat-span-columns 6;
+
+      &:nth-of-type(3){
+        margin-right:0;
+      }
+
+      &.textarea{
+        width: 100%;
+        float: none;
+        clear: both;
+        padding-top: 30px;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+textarea{
+  min-height: 85px;
+  resize: none;
+  border-radius: 0 !important;
+}
+
+
+.form-footer{
+  text-align: right;
+  margin-top: 25px;
+}
+
+
+.modal-contact{
+    @media screen and (--sm-md) {
+        #map,
+        .modal-map{
+            height: 300px;
+        }
+        .request-info{
+            padding-top: 15px;
+        }
+        .form-vertical{
+            padding: 0;
+        }
+        .form-footer + p{
+            display: none;
+        }
+    }
+
+    @media screen and (--md-lg){
+        #map,
+        .modal-map{
+            height: 625px;
+        }
+    }
+}

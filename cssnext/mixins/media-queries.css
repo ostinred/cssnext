@@ -1,0 +1,27 @@
+@custom-media --xs  (width >= 480px);
+@custom-media --sm  (width >= 767px);
+@custom-media --md  (width >= 992px);
+@custom-media --lg  (width >= 1200px);
+@cutom-media --xlg  (width >= 1360px);
+@cutom-media --xxlg (width >= 1600px); 
+
+@custom-media --max-xs (width <= 480px);
+@custom-media --max-sm (width <= 767px);
+@custom-media --max-md (width <= 992px);
+@custom-media --max-lg (width <= 1200px);
+@cutom-media --max-xlg (width <= 1360px);
+
+
+@custom-media --xs-sm   (width >= 480px) and (width <= 767px);
+@custom-media --sm-md   (width >= 767px) and (width <= 992px);
+@custom-media --md-lg   (width >= 992px) and (width <= 1200px);
+@custom-media --lg-xlg  (width >= 1200px) and (width <= 1360px);
+
+@custom-media --xs-md   (width >= 480px) and (width <= 992px);
+@custom-media --xs-lg   (width >= 480px) and (width <= 1200px);
+@custom-media --xs-xlg  (width >= 480px) and (width <= 1360px);
+
+@custom-media --sm-lg   (width >= 767px) and (width <= 1200px);
+@custom-media --sm-xlg  (width >= 767px) and (width <= 1360px);
+
+@custom-media --md-xlg  (width >= 767px) and (width <= 1360px);

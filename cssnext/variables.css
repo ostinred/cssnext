@@ -1,0 +1,34 @@
+/* fonts */
+:root{
+--main-font-family: "PTSans";
+
+
+/* colors */
+--global-color:  #fff;               /* white */
+--light-color:   #009600;            /* green */
+--light-color-lighten:   #00b300;   /* --light-color: lighten(10%); */
+--light-color-darken:   #007a00;   /* --light-color: darken(5%); */
+--dark-color:    #333;               /* dark gray */
+--social-link-bg: #0af;             /*blue*/
+
+
+--body-bg:       var(--global-color);
+--link-color:    var(--light-color);
+--link-hover:    var(--light-color-lighten);
+--link-active:    var(--light-color-darken);
+
+/* font-sizes*/
+--font-size-base:   1rem;      /* 16px */
+--font-size-xs:     0.875rem;   /* 14px */
+--font-size-medium: 1.25rem;    /* 20px */
+--font-size-md:     1.5rem;    /* 24px */
+--font-size-lg:     2.25rem;   /* 36px */
+
+
+/* line-height */
+
+--line-height-base:      1.444;
+--line-height-headings:  1.1;
+
+--line-height-normal:    1;
+}
